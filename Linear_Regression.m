@@ -3,8 +3,8 @@
 
 function [r2 l] = Linear_Regression(x)
 % Input is the data set x with both the x and y values 
-% Funxtion will output a set of numbers used for a line over the window 
-% The function will also output an arbitrary function for the best fit line
+% Function will output a set of numbers used for a line over the window in
+% variable l
 % Team 3
 n = length(x(1,:));
 xy = zeros(1,n);
@@ -21,6 +21,10 @@ xy = zeros(1,n);
     a0 = (sumy-a1*sumx)/n;
     yfit = a1.*x(1,:)+a0;
     
+% Display the coefficient values
+fprintf('a1 value is %d\n',a1)
+fprintf('a0 value is %d\n',a0)
+
     l = [x(1,:); yfit]; % Array of best fit line
    
     
@@ -38,12 +42,4 @@ xy = zeros(1,n);
     Sr = sum(sr);
     r2 = (St-Sr)/St;
 end
-
-x = rand(2,10);
-[r2 l] = Linear_Regression(x);
-
-scatter(x(1,:),x(2,:))
-hold on
-plot(l(1,:),l(2,:))
-
 
