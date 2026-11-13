@@ -1,10 +1,9 @@
 
-%% Linear regression Function
-
 function [r2 l] = Linear_Regression(x)
 % Input is the data set x with both the x and y values 
 % Function will output a set of numbers used for a line over the window in
 % variable l
+% X should be input as a 2xn matrix
 % Team 3
 n = length(x(1,:));
 xy = zeros(1,n);
